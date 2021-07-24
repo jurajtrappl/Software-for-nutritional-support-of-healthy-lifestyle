@@ -1,0 +1,651 @@
+﻿@inject IViewLocalizer Localizer
+@model ChangeSettingsModel
+
+<div class="container justify-content-center fullHeight">
+    <div class="row heightInherit">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center paddingDelimiter30">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "/img/settings.png", alt = "Settings" }))
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center justify-content-center paddingDelimiter30">
+            <div class="accordion"
+                 id="settingsAccordion">
+                <div class="row justify-content-center">
+                    <span class="text-danger">
+                        @Html.ValidationSummary(true)
+                    </span>
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = "text-success",
+                            message = TempData[TempDataMessages.SensitiveDataSent] as string }))
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = "text-success",
+                            message = TempData[TempDataMessages.ChangeOfPassword] as string }))
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = "text-success",
+                            message = TempData[TempDataMessages.ChangeOfProfileInformation] as string }))
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = "text-success",
+                            message = TempData[TempDataMessages.ChangeOfApplicationPlan] as string }))
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = "text-success",
+                            message = TempData[TempDataMessages.ChangeOfEatingTimeConfig] as string }))
+                </div>
+                <div class="row">
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="changeProfileInformationHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#changeProfileInformationCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="changeProfileInformationCollapse">
+                                    @Localizer["ChangeProfileInformation"]
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="changeProfileInformationCollapse"
+                             class="collapse"
+                             aria-labelledby="changeProfileInformationHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                @using (Html.BeginForm(
+                                    nameof(Application.Web.Areas.App.Controllers.SettingsController.ChangeProfileInformation),
+                                    ControllerNames.Settings,
+                                    new { area = AreaNames.App },
+                                    FormMethod.Post,
+                                    antiforgery: true,
+                                    new { @class = "w-100" }))
+                                {
+                                    <div class="form-row">
+                                        <div class="form-group col-xs-12 col-lg-6">
+                                            @Html.LabelFor(
+                                                m => m.ChangeProfileInformation.FirstName,
+                                                Localizer["FirstName"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangeProfileInformation.FirstName,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "text"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangeProfileInformation.FirstName,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-xs-12 col-lg-6">
+                                            @Html.LabelFor(
+                                                m => m.ChangeProfileInformation.LastName,
+                                                Localizer["LastName"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangeProfileInformation.LastName,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "text"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangeProfileInformation.LastName,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-xs-12 col-lg-6">
+                                            @Html.LabelFor(
+                                                m => m.ChangeProfileInformation.Username,
+                                                Localizer["Username"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangeProfileInformation.Username,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "text"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangeProfileInformation.Username,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-xs-12 col-lg-6">
+                                            @Html.LabelFor(
+                                                m => m.ChangeProfileInformation.Email,
+                                                Localizer["Email"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangeProfileInformation.Email,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "email"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangeProfileInformation.Email,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <button type="submit" class="btn btn-lg bgRoyalOrange">
+                                            @Localizer["Change"]
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="changePasswordHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#changePasswordCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="changePasswordCollapse">
+                                    @Localizer["ChangePassword"]
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="changePasswordCollapse"
+                             class="collapse"
+                             aria-labelledby="changePasswordHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                @using (Html.BeginForm(
+                                     nameof(Application.Web.Areas.App.Controllers.SettingsController.ChangePassword),
+                                     ControllerNames.Settings,
+                                     new { area = AreaNames.App },
+                                     FormMethod.Post,
+                                     antiforgery: true,
+                                     new { @class = "w-100" }))
+                                {
+                                    <div class="form-row justify-content-center">
+                                        <div class="form-group col-md-6 col-xs-12">
+                                            @Html.LabelFor(
+                                                m => m.ChangePassword.CurrentPassword,
+                                                Localizer["CurrentPassword"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangePassword.CurrentPassword,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "password"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangePassword.CurrentPassword,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <div class="form-group col-md-6 col-xs-12">
+                                            @Html.LabelFor(
+                                                m => m.ChangePassword.NewPassword,
+                                                Localizer["NewPassword"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangePassword.NewPassword,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "password"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangePassword.NewPassword,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <div class="form-group col-md-6 col-xs-12">
+                                            @Html.LabelFor(
+                                                m => m.ChangePassword.ConfirmNewPassword,
+                                                Localizer["ConfirmNewPassword"].Value,
+                                                new { @class = "fontLarger fontLight" })
+                                            @Html.TextBoxFor(
+                                                m => m.ChangePassword.ConfirmNewPassword,
+                                                null,
+                                                new
+                                                     {
+                                                    @class = "form-control form-control-lg fontLight",
+                                                    type = "password"
+                                                     })
+                                            <div>
+                                                @Html.ValidationMessageFor(
+                                                    m => m.ChangePassword.ConfirmNewPassword,
+                                                    null,
+                                                    new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <button type="submit" class="btn btn-lg bgRoyalOrange">
+                                            @Localizer["Change"]
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="changeEatingTimeConfigHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#changeEatingTimeConfigCollapse"
+                                        aria-expanded="false"
+                                        aria-controls="changeEatingTimeConfigCollapse">
+                                    @Localizer["ChangeEatingTimeConfig"]
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="changeEatingTimeConfigCollapse"
+                             class="collapse"
+                             aria-labelledby="changeEatingTimeConfigHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                @using (Html.BeginForm(
+                                     nameof(Application.Web.Areas.App.Controllers.SettingsController.ChangeEatingTimeConfig),
+                                     ControllerNames.Settings,
+                                     new { area = AreaNames.App },
+                                     FormMethod.Post,
+                                     antiforgery: true,
+                                     new { @class = "w-100 eatingHoursForm" }))
+                                {
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.Breakfast"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.Breakfast]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between w-100">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Breakfast.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Breakfast].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Breakfast.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Breakfast].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.MidMorningSnack"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.MidMorningSnack]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.MidMorningSnack.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.MidMorningSnack].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.MidMorningSnack.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.MidMorningSnack].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.Lunch"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.Lunch]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Lunch.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Lunch].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Lunch.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Lunch].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.AfternoonSnack"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.AfternoonSnack]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.AfternoonSnack.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.AfternoonSnack].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.AfternoonSnack.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.AfternoonSnack].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.Dinner"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.Dinner]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Dinner.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Dinner].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Dinner.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Dinner].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-center">
+                                        <div>
+                                            <div class="form-row">
+                                                <div class="col-12">
+                                                    <label asp-for="ChangeEatingTimeConfig.Supper"
+                                                           class="fontLarger fontLight">
+                                                        @ViewBag.TranslatedMealNames[Meal.Supper]
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-between">
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Supper.Hours"
+                                                           type="number"
+                                                           min="5"
+                                                           max="21"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Supper].Hours" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>h</span>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input asp-for="ChangeEatingTimeConfig.Supper.Minutes"
+                                                           type="number"
+                                                           min="0"
+                                                           max="59"
+                                                           class="form-control form-control-lg fontLight"
+                                                           value="@ViewBag.CurrentTimeConfig[Meal.Supper].Minutes" />
+                                                </div>
+                                                <div class="col-2 d-flex align-items-center">
+                                                    <span>min</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <button type="submit" class="btn btn-lg bgRoyalOrange">
+                                            @Localizer["Change"]
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="changePlanHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#changePlanCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="changePlanCollapse">
+                                    @Localizer["ChangePlan"]
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="changePlanCollapse"
+                             class="collapse"
+                             aria-labelledby="changePlanHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                @using (Html.BeginForm(
+                                     nameof(Application.Web.Areas.App.Controllers.SettingsController.ChangePlan),
+                                     ControllerNames.Settings,
+                                     new { area = AreaNames.App },
+                                     FormMethod.Post,
+                                     antiforgery: true,
+                                     new { @class = "eatingHoursForm" }))
+                                {
+                                    <div class="form-row">
+                                        <div class="form-group col-12">
+                                            <label asp-for="ChangePlan.ApplicationPlanType"
+                                                   class="fontLarger fontLight">
+                                                @Localizer["NewApplicationPlan"]
+                                            </label>
+                                            @Html.DropDownListFor(
+                                                m => m.ChangePlan.ApplicationPlanType,
+                                                (IEnumerable<SelectListItem>)ViewBag.TranslatedAppPlans,
+                                                new { @class = "form-control form-control-lg fontLight" })
+                                            <div>
+                                                @Html.ValidationMessageFor(m => m.ChangePlan.ApplicationPlanType)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-center">
+                                        <button type="submit" class="btn btn-lg bgRoyalOrange">
+                                            @Localizer["Change"]
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="sensitiveDataHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#sensitiveDataCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="sensitiveDataCollapse">
+                                    @Localizer["SendSensitiveData"]
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="sensitiveDataCollapse"
+                             class="collapse"
+                             aria-labelledby="sensitiveDataHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                            @Localizer["SensitiveDataInfo"]
+                                        </p>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <a class="btn btn-lg fontLarge bgRoyalOrange"
+                                           href="@Url.RouteUrl(
+                                                    new {
+                                                        action = nameof(Application.Web.Areas.App.Controllers.SettingsController.SendSensitiveDataToEmail),
+                                                        controller = ControllerNames.Settings,
+                                                        area = AreaNames.App })">
+                                            @Localizer["Send"]
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 noBorder">
+                        <div class="card-header"
+                             id="deleteAccountHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#deleteAccountCollapse"
+                                        aria-expanded="true"
+                                        aria-controls="deleteAccountCollapse">
+                                    @Localizer["DeleteAccount"]
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="deleteAccountCollapse"
+                             class="collapse"
+                             aria-labelledby="deleteAccountHeading"
+                             data-parent="#settingsAccordion">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                            @Localizer["DeleteAccountInfo"]
+                                        </p>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <a class="btn btn-lg fontLarge bgRoyalOrange"
+                                           href="@Url.RouteUrl(
+                                                    new {
+                                                        action = nameof(Application.Web.Areas.App.Controllers.SettingsController.DeleteAccount),
+                                                        controller = ControllerNames.Settings,
+                                                        area = AreaNames.App })">
+                                            @Localizer["Delete"]
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

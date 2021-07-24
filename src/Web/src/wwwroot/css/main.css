@@ -1,0 +1,29 @@
+﻿/* CSS for Main area. */
+
+/* Index */
+.ptNavbar {
+    padding-top: 70px;
+}
+
+/* Functions */
+.functionCol:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.functionDescriptionMargin {
+    margin: 5px 10px 5px 10px;
+}
+
+.functionHeaderMargin {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.functionContentMargin {
+    margin-bottom: 25px;
+}
+
+/* Navbar */
+.loginIcon {
+    background-image: url(/img/user.png);
+}

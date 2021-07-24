@@ -1,0 +1,57 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ?
+        "~/" :
+        $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+}
+
+<!DOCTYPE html>
+<html lang="@SharedLocalizer["LangAttribute"]">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@SharedLocalizer["AppName"]</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/shared.css" />
+    <link rel="stylesheet" href="~/css/color.css" />
+    <link rel="stylesheet" href="~/css/flags.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bgPapayaWhip navbarHeight">
+            <div class="d-flex align-items-center justify-content-between vw-100">
+                <div>
+                    <a class="navbar-brand"
+                       href="@Url.RouteUrl(
+                                new {
+                                    area = AreaNames.Main,
+                                    controller = ControllerNames.Home,
+                                    action = nameof(Application.Web.Areas.Main.Controllers.HomeController.Index) })">
+                        <img src="~/img/logo.png"
+                             width="45"
+                             height="45"
+                             alt="Logo">
+                    </a>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    @(await Component.InvokeAsync<FlagIconViewComponent>(
+                        new { culture = @requestCulture.RequestCulture.UICulture.Name, returnUrl }))
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pageContainer">
+        <div class="contentWrap">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

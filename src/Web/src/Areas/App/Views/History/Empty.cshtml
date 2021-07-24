@@ -1,0 +1,17 @@
+﻿@inject IViewLocalizer Localizer
+
+<div class="container fullHeight">
+    <div class="row heightInherit d-flex align-items-center justify-content-center text-center">
+        <div>
+            <div class="paddingDelimiter15">
+                @(await Component.InvokeAsync<ImageViewComponent>(
+                    new { path = "/img/emptyHistory.png", alt = "Empty history", @class = "imgLimited400" }))
+            </div>
+            <div class="paddingDelimiter15">
+                <h1 class="display-4">
+                    @Localizer["EmptyList"]
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>

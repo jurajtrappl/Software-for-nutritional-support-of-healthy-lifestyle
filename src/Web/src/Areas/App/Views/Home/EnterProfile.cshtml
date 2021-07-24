@@ -1,0 +1,129 @@
+﻿@inject IViewLocalizer Localizer
+@model UserProfileModel
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container justify-content-center fullHeight">
+    <div class="row heightInherit">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "/img/signUp.png", alt = "Enter profile" }))
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center justify-content-center">
+            <div>
+                <h1 class="display-4 text-center fontBold paddingDelimiter15">
+                    @Localizer["EnterProfileInfo"]
+                </h1>
+                <h1 class="fontExtraLight paddingDelimiter15">
+                    @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                        new {
+                            statusColor = string.Empty,
+                            message = TempData[TempDataMessages.ChosenPlan] as string }))
+                </h1>
+                @using (Html.BeginForm())
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-xs-12">
+                            @Html.LabelFor(
+                                m => m.Age,
+                                Localizer["Age"].Value,
+                                new { @class = "fontLarger fontLight" })
+                            @Html.TextBoxFor(
+                                m => m.Age,
+                                null,
+                                new { @class = "form-control form-control-lg fontLight", type = "text" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-xs-12">
+                            @Html.LabelFor(
+                                m => m.SexType,
+                                Localizer["Sex"].Value,
+                                new { @class = "fontLarger fontLight" })
+                            @Html.DropDownListFor(
+                                m => m.SexType,
+                                (IEnumerable<SelectListItem>)ViewBag.TranslatedSexTypes,
+                                new { @class = "form-control form-control-lg fontLight" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.SexType, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-xs-12">
+                            @Html.LabelFor(
+                                m => m.Height,
+                                Localizer["Height"].Value,
+                                new { @class = "fontLarger fontLight" })
+                            @Html.TextBoxFor(
+                                m => m.Height,
+                                null,
+                                new { @class = "form-control form-control-lg fontLight", type = "text" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Height, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-xs-12">
+                            @Html.LabelFor(
+                                m => m.Weight,
+                                Localizer["Weight"].Value,
+                                new { @class = "fontLarger fontLight" })
+                            @Html.TextBoxFor(
+                                m => m.Weight,
+                                null,
+                                new { @class = "form-control form-control-lg fontLight", type = "text" })
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Weight, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-xs-12">
+                            @Html.LabelFor(
+                                m => m.PhysicalActivityLevel,
+                                Localizer["PhysicalActivityLevel"].Value,
+                                new { @class = "fontLarger fontLight" })
+                            @Html.DropDownListFor(
+                                m => m.PhysicalActivityLevel,
+                                (IEnumerable<SelectListItem>)ViewBag.TranslatedActivityDifficulties,
+                                new { @class = "form-control form-control-lg fontLight" })
+                            <div>
+                                @Html.ValidationMessageFor(
+                                    m => m.PhysicalActivityLevel,
+                                    null,
+                                    new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-xs-12">
+                            <label asp-for="Allergens"
+                                   class="fontLarger fontLight">
+                                @Localizer["FoodAllergies"]
+                            </label>
+                            <select class="form-control" multiple="multiple" name="Allergens">
+                                @foreach (SelectListItem allergen in (IEnumerable<SelectListItem>)ViewBag.TranslatedAllergens)
+                                {
+                                    <option value="@(allergen.Value)">@(allergen.Text)</option>
+                                }
+                            </select>
+                            <div>
+                                @Html.ValidationMessageFor(m => m.Allergens)
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-danger">
+                        @Html.ValidationSummary(true)
+                    </span>
+                    <div class="text-center paddingDelimiter15">
+                        <button type="submit"
+                                class="btn btn-lg bgRoyalOrange">
+                            @Localizer["Enter"]
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

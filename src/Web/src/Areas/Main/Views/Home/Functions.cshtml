@@ -1,0 +1,31 @@
+﻿@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container d-flex align-items-center fullHeight">
+    <div class="heightInherit">
+        <div class="row justify-content-center mt-3">
+            <h1 class="display-4 text-center fontExtraLight functionHeaderMargin">
+                @Localizer["WhatAppOffers"]
+            </h1>
+        </div>
+        <div class="row justify-content-between mt-3">
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "plan.png", colName = "MealPlan" }))
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "exercise.png", colName = "ExercisePlan" }))
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "water.png", colName = "DrinkingRegime" }))
+        </div>
+        <div class="row justify-content-between mt-3">
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "calendar.png", colName = "Calendar" }))
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "soup.png", colName = "Cooking" }))
+            @(await Component.InvokeAsync<FunctionDescriptionViewComponent>(
+                new { localizer = Localizer, iconName = "carts.png", colName = "ShoppingList" }))
+        </div>
+    </div>
+</div>

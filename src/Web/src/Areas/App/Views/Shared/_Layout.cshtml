@@ -1,0 +1,135 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ?
+        "~/" :
+        $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+}
+
+<!DOCTYPE html>
+<html lang="@SharedLocalizer["LangAttribute"]">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@SharedLocalizer["AppName"]</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/app.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/shared.css" />
+    <link rel="stylesheet" href="~/css/calendar.css" />
+    <link rel="stylesheet" href="~/css/color.css" />
+    <link rel="stylesheet" href="~/css/flags.css" />
+
+    <!-- JS -->
+    <script type="module" src="~/js/webCalendar/showPlanContent.js"></script>
+    <script type="module" src="~/js/navigation.js"></script>
+    <script type="module" src="~/js/appIndex.js"></script>
+    <script type="module" src="~/js/shoppingList.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bgPapayaWhip atleastLg">
+            <div class="d-flex align-items-center justify-content-between vw-100">
+                <a class="navbar-brand"
+                   href="@Url.RouteUrl(
+                                new {
+                                    area = AreaNames.App,
+                                    controller = ControllerNames.Home,
+                                    action = nameof(Application.Web.Areas.App.Controllers.HomeController.Index) })">
+                    <img src="~/img/logo.png"
+                         width="45"
+                         height="45"
+                         alt="Logo">
+                </a>
+
+                <div>
+                    @await Html.PartialAsync("_NavbarPartial")
+                </div>
+
+                <div class="d-flex">
+                    @using (Html.BeginForm(
+                       nameof(Application.Web.Areas.Account.Controllers.HomeController.Logout),
+                       ControllerNames.Home,
+                       new { area = AreaNames.Account },
+                       FormMethod.Post,
+                       antiforgery: true,
+                       new { id = "logoutForm" }))
+                    {
+                        <button class="nav-link"
+                                style="background: none !important; border: none;"
+                                onclick="document.getElementById('logoutForm').submit()">
+                            <img src="~/icons/log-out.png"
+                                 height="32"
+                                 width="32"
+                                 alt="Log out icon" />
+                        </button>
+                    }
+                    <div class="d-flex align-items-center justify-content-center">
+                        @(await Component.InvokeAsync<FlagIconViewComponent>(
+                            new { culture = @requestCulture.RequestCulture.UICulture.Name, returnUrl }))
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bgPapayaWhip lessThanLg">
+            <a class="navbar-brand"
+               href="@Url.RouteUrl(
+                                new {
+                                    area = AreaNames.App,
+                                    controller = ControllerNames.Home,
+                                    action = nameof(Application.Web.Areas.App.Controllers.HomeController.Index) })">
+                <img src="~/img/logo.png"
+                     width="45"
+                     height="45"
+                     alt="Logo">
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarSupportedContent"
+                 class="collapse navbar-collapse">
+                @await Html.PartialAsync("_NavbarPartial")
+                @using (Html.BeginForm(
+                  nameof(Application.Web.Areas.Account.Controllers.HomeController.Logout),
+                  ControllerNames.Home,
+                  new { area = AreaNames.Account }))
+                {
+                    <button class="nav-link"
+                            style="background: none !important; border: none;"
+                            onclick="document.getElementById('logoutForm').submit()">
+                        <img src="~/icons/log-out.png"
+                             height="32"
+                             width="32"
+                             alt="Log out icon" />
+                    </button>
+                }
+                <div class="d-flex align-items-center justify-content-center">
+                    @(await Component.InvokeAsync<FlagIconViewComponent>(
+                        new { culture = @requestCulture.RequestCulture.UICulture.Name, returnUrl }))
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pageContainer">
+        <div class="contentWrap">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

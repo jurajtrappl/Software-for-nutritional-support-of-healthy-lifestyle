@@ -1,0 +1,70 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    //Layout = "~/Areas/App/Views/Shared/_EmptyNavbarLayout.cshtml";
+    ViewData["Title"] = SharedLocalizer["PageTitle"];
+}
+
+@(await Component.InvokeAsync<TempDataMessageViewComponent>(
+    new { statusColor = "text-danger", message = TempData[TempDataMessages.NotSuitablePlanChosen] as string }))
+@(await Component.InvokeAsync<TempDataMessageViewComponent>(
+    new { statusColor = "text-danger", message = TempData[TempDataMessages.NotSelectedPlan] as string }))
+
+<div class="container pb-5">
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            localizer = SharedLocalizer,
+            name = ApplicationPlan.Optimal.ToString(),
+            colNames = new string[] { "Colorfulness", "Regularity", "Balance" }
+        }))
+    <div class="row justify-content-center">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.App.Controllers.HomeController.ChosenPlan),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.App,
+                        planName = ApplicationPlan.Optimal.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            localizer = SharedLocalizer,
+            name = ApplicationPlan.Sport.ToString(),
+            colNames = new string[] { }
+        }))
+    <div class="row justify-content-center">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.App.Controllers.HomeController.ChosenPlan),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.App,
+                        planName = ApplicationPlan.Sport.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            localizer = SharedLocalizer,
+            name = ApplicationPlan.Reduce.ToString(),
+            colNames = new string[] { "HealthyNutrition", "PhysicalActivity", "Regeneration", "MentalComfort" }
+        }))
+    <div class="row justify-content-center paddingFooter">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.App.Controllers.HomeController.ChosenPlan),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.App,
+                        planName = ApplicationPlan.Reduce.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+</div>

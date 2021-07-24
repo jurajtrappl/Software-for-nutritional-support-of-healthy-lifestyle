@@ -1,0 +1,9 @@
+﻿@using Application.Web.Views.Shared.Components
+@model NavbarLinkViewModel
+
+<li class="nav-item">
+    <a href="@Url.RouteUrl(Model.ActionHtmlAttributes)"
+       class="nav-link textBlack fontLarger">
+        @Model.Localizer[Model.Name + "NavLink"].Value
+    </a>
+</li>

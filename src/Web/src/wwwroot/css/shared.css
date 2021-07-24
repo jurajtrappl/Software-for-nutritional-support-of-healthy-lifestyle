@@ -1,0 +1,195 @@
+﻿/* Bootstrap default for atleast large screens. */
+@media (min-width: 992px) {
+    .atleastLg {
+    }
+
+    .lessThanLg {
+        display: none;
+    }
+}
+
+/* Bootstrap default for less than large screens. */
+@media (max-width: 991px) {
+    .atleastLg {
+        display: none;
+    }
+
+    .lessThanLg {
+    }
+}
+
+/* Bootstrap default for atleast small screens. */
+@media (min-width: 576px) {
+    .fullHeight {
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Bootstrap default for less than small screens. */
+@media (max-width: 575px) {
+    .fullHeight {
+        height: auto !important;
+    }
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rowReverse {
+    flex-direction: row-reverse;
+}
+
+.imgLimited400 {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.bottomLeft {
+    bottom: 0;
+    left: 0;
+}
+
+.calendarIconBorderRadius {
+    border-radius: 45%;
+}
+
+.introCarousel {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.fullHeight {
+    height: calc(100vh - 70px);
+}
+
+.heightInherit {
+    height: inherit;
+}
+
+.btnLogOff {
+    color: #0366d6;
+    height: 40px;
+    border: 0;
+}
+
+.bgLightGray {
+    background-color: rgba(211, 211, 211, 0.4);
+}
+
+.bgBlack {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.btnLogOff:hover {
+    color: #0056b3;
+}
+
+.navbarHeight {
+    height: 70px;
+}
+
+.centeredPaddedFooter {
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 575px) {
+    .formSubmitButton {
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .formSubmitButton {
+        width: 25%;
+    }
+}
+
+/* PADDING DELIMITER */
+.paddingDelimiter30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.paddingDelimiter15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* HOMEPAGE CARDS */
+
+.myCard {
+    border: 1px solid #ddd;
+    padding: 7px 7px 7px 7px;
+}
+
+@media (max-width: 767px) {
+    .myCardMargin {
+        margin: 10px 0 10px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .myCardMargin {
+        margin: 0 10px 0 10px;
+    }
+}
+
+.myCardHeading {
+    margin: 5px 0 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.myCardIcon {
+    border-radius: 20px;
+    height: 35px;
+    width: 35px;
+    margin: -35px 10px 0 0;
+}
+
+.myFoodIconImage {
+    margin: 5px 0 0 7px;
+    height: 20px;
+}
+
+/* HOME PAGE PLANS */
+
+.paddingZeroLeftRight {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.homePageBackgroundColor {
+    background-color: rgba(0, 17, 26, 0.50);
+}
+
+.fontLarger {
+    font-size: larger;
+}
+
+.fontLarge {
+    font-size: large;
+}
+
+.fontSize50 {
+    font-size: 50px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modalContent {
+    height: 450px;
+    overflow-y: scroll;
+}

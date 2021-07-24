@@ -1,0 +1,88 @@
+﻿@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<!-- Intro -->
+<div class="container justify-content-center fullHeight">
+    <div class="row text-center heightInherit">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center">
+            <div>
+                <div class="row paddingDelimiter15">
+                    <h1 class="display-3">
+                        @Localizer["AppHeading"]
+                    </h1>
+                </div>
+                <div class="row paddingDelimiter15">
+                    <h1 class="fontExtraLightItalic">
+                        @Localizer["AppSubHeading"]
+                    </h1>
+                </div>
+                <div class="row justify-content-center paddingDelimiter15">
+                    <a href="#howToStart"
+                       class="btn btn-lg fontLarge bgRoyalOrange">
+                        @Localizer["GetStarted"]
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "img/mainPage.jpg", alt = "Main page" }))
+        </div>
+    </div>
+</div>
+
+<!-- How to -->
+<div class="container">
+    <div>
+        <h1 id="howToStart" class="display-3 text-center paddingDelimiter15">
+            @Localizer["HowToStart"]
+        </h1>
+    </div>
+
+    <div class="row rowReverse">
+        @(await Component.InvokeAsync<TutorialStageViewComponent>(
+            new {
+                localizer = Localizer,
+                name = "CreateAccount",
+                orderNum = 1,
+                imgPath = "img/signIn.png",
+                imgAlt = "Sign in" }))
+    </div>
+    <div class="row">
+        @(await Component.InvokeAsync<TutorialStageViewComponent>(
+            new {
+                localizer = Localizer,
+                name = "ChoosePlan",
+                orderNum = 2,
+                imgPath = "img/choosePlan.png",
+                imgAlt = "Choose plan" }))
+    </div>
+    <div class="row rowReverse">
+        @(await Component.InvokeAsync<TutorialStageViewComponent>(
+            new {
+                localizer = Localizer,
+                name = "EnterProfile",
+                orderNum = 3,
+                imgPath = "img/enterProfile.png",
+                imgAlt = "Enter profile" }))
+    </div>
+    <div class="row">
+        @(await Component.InvokeAsync<TutorialStageViewComponent>(
+            new {
+                localizer = Localizer,
+                name = "PlansReady",
+                orderNum = 4,
+                imgPath = "img/planIsReady.png",
+                imgAlt = "Plan is ready" }))
+    </div>
+</div>
+
+<!-- Freepik -->
+<div class="text-center">
+    <p>
+        Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </p>
+</div>

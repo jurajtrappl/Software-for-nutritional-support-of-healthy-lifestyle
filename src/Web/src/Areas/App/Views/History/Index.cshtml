@@ -1,0 +1,12 @@
+﻿@inject IViewLocalizer Localizer
+@model HistoryListViewModel
+
+<div class="container d-flex align-items-center justify-content-center fullHeight">
+    <div class="heightInherit widthInherit">
+        @foreach (var planHistory in Model.History)
+        {
+            @(await Component.InvokeAsync<PlanHistoryResultViewComponent>(
+                new { localizer = Localizer, planHistory }))
+        }
+    </div>
+</div>

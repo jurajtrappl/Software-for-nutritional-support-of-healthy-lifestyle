@@ -1,0 +1,270 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+@font-face {
+    font-family: 'Config Condensed Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Regular'), url('../font/ConfigCondensedRegular.woff') format('woff');
+}
+
+.fontRegular {
+    font-family: 'Config Condensed Regular';
+}
+
+@font-face {
+    font-family: 'Config Condensed Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Italic'), url('../font/ConfigCondensedItalic.woff') format('woff');
+}
+
+.fontItalic {
+    font-family: 'Config Condensed Italic'
+}
+
+@font-face {
+    font-family: 'Config Condensed Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Thin'), url('../font/ConfigCondensedThin.woff') format('woff');
+}
+
+.fontThin {
+    font-family: 'Config Condensed Thin';
+}
+
+@font-face {
+    font-family: 'Config Condensed Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Thin Italic'), url('../font/ConfigCondensedThinItalic.woff') format('woff');
+}
+
+.fontThinItalic {
+    font-family: 'Config Condensed Thin Italic';
+}
+
+@font-face {
+    font-family: 'Config Condensed ExtraLight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed ExtraLight'), url('../font/ConfigCondensedExtraLight.woff') format('woff');
+}
+
+.fontExtraLight {
+    font-family: 'Config Condensed ExtraLight';
+}
+
+@font-face {
+    font-family: 'Config Condensed ExtraLight Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed ExtraLight Italic'), url('../font/ConfigCondensedExtraLightItalic.woff') format('woff');
+}
+
+.fontExtraLightItalic {
+    font-family: 'Config Condensed ExtraLight Italic';
+}
+
+@font-face {
+    font-family: 'Config Condensed Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Light'), url('../font/ConfigCondensedLight.woff') format('woff');
+}
+
+.fontLight {
+    font-family: 'Config Condensed Light';
+}
+
+@font-face {
+    font-family: 'Config Condensed Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Light Italic'), url('../font/ConfigCondensedLightItalic.woff') format('woff');
+}
+
+.fontItalic {
+    font-family: 'Config Condensed Italic';
+}
+
+@font-face {
+    font-family: 'Config Condensed Text';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Text'), url('../font/ConfigCondensedText.woff') format('woff');
+}
+
+.fontText {
+    font-family: 'Config Condensed Text';
+}
+
+@font-face {
+    font-family: 'Config Condensed Text Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Text Italic'), url('../font/ConfigCondensedTextItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Medium'), url('../font/ConfigCondensedMedium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Medium Italic'), url('../font/ConfigCondensedMediumItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed SemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed SemiBold'), url('../font/ConfigCondensedSemiBold.woff') format('woff');
+}
+
+.fontSemiBold {
+    font-family: 'Config Condensed SemiBold';
+}
+
+@font-face {
+    font-family: 'Config Condensed SemiBold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed SemiBold Italic'), url('../font/ConfigCondensedSemiBoldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Bold'), url('../font/ConfigCondensedBold.woff') format('woff');
+}
+
+.fontBold {
+    font-family: 'Config Condensed Bold';
+}
+
+@font-face {
+    font-family: 'Config Condensed Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Bold Italic'), url('../font/ConfigCondensedBoldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed ExtraBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed ExtraBold'), url('../font/ConfigCondensedExtraBold.woff') format('woff');
+}
+
+.fontExtraBold {
+    font-family: 'Config Condensed ExtraBold';
+}
+
+@font-face {
+    font-family: 'Config Condensed ExtraBold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed ExtraBold Italic'), url('../font/ConfigCondensedExtraBoldItalic.woff') format('woff');
+}
+
+.fontExtraBoldItalic {
+    font-family: 'Config Condensed ExtraBold Italic';
+}
+
+@font-face {
+    font-family: 'Config Condensed Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Black'), url('../font/ConfigCondensedBlack.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Config Condensed Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Config Condensed Black Italic'), url('../font/ConfigCondensedBlackItalic.woff') format('woff');
+}
+
+/* end fonts */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Config Condensed Regular';
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.pageContainer {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+.contentWrap {
+}

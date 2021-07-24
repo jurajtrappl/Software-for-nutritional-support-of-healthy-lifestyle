@@ -1,0 +1,43 @@
+﻿@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container fullHeight">
+    <div class="row heightInherit d-flex align-items-center justify-content-center text-center">
+        <div>
+            <div class="paddingDelimiter15">
+                @(await Component.InvokeAsync<ImageViewComponent>(
+                    new {
+                        path = "/img/emailConfirm.png",
+                        alt = "Email confirmation",
+                        @class = "imgLimited400" }))
+            </div>
+            <div class="paddingDelimiter15">
+                @(await Component.InvokeAsync<TempDataMessageViewComponent>(
+                    new {
+                        statusColor = "text-success",
+                        message = TempData[TempDataMessages.UserWithEmailDoesNotLongerExist] as string }))
+                <h2>@ViewBag.Title</h2>
+                <div>
+                    <p>
+                        @Localizer["Message"]
+                        @Localizer["PleaseLogin"]
+                    </p>
+                </div>
+            </div>
+            <div class="paddingDelimiter15 text-center">
+                <a href="@Url.RouteUrl(
+                            new {
+                                action = nameof(Application.Web.Areas.Account.Controllers.HomeController.Login),
+                                controller = ControllerNames.Home,
+                                area = AreaNames.Account })"
+                   class="btn btn-lg bgRoyalOrange">
+                    @SharedLocalizer["SignInNavLink"]
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

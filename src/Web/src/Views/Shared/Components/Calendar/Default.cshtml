@@ -1,0 +1,19 @@
+﻿@using Application.Core.Common.Constants
+@using Application.Web.Views.Shared.Components
+@model CalendarViewModel
+
+@{
+    int dayCounter = 0;
+}
+
+@for (var week = 0; week < CalendarConstants.WeeksInCalendarComponent; week++)
+{
+    <div class="monthWeek" id="week">
+        @for (var weekDay = 0; weekDay < CalendarConstants.DaysInWeek; weekDay++)
+        {
+            var currentDay = Model.Dates[dayCounter++];
+            @(await Component.InvokeAsync<CalendarDayViewComponent>(
+                new { user = Model.User, date = currentDay.Date }))
+        }
+    </div>
+}

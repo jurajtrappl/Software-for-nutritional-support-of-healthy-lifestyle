@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppHeading" xml:space="preserve">
+    <value>Nutričná aplikácia podpory zdravia</value>
+  </data>
+  <data name="AppSubHeading" xml:space="preserve">
+    <value>Chcete schudnúť, nabrať svaly alebo naučiť sa zdravo stravovať?</value>
+  </data>
+  <data name="ChoosePlan" xml:space="preserve">
+    <value>Vyberte si plán</value>
+  </data>
+  <data name="ChoosePlanDescription" xml:space="preserve">
+    <value>&lt;b&gt;Optimálny plán&lt;/b&gt; je vhodný pre osoby, ktoré sa chcú naučiť zdravo stravovať a udržať si svoju telesnú hmotnosť. &lt;b&gt;Redukčný plán&lt;/b&gt; je určený pre osoby s nadváhou či obezitou a ponúka jednoduché riešenie redukcie telesnej hmotnosti zdravým a trvalým spôsobom. &lt;b&gt;Športový plán&lt;/b&gt; je vhodný pre amatérskych športovcov, ktorí by si radi uľahčili život zbavením sa starostí s prípavou jedálnička. Pre bližší popis plánov kliknite &lt;a href="main/home/plans"&gt;tu&lt;/a&gt;.</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Vytvorte si účet</value>
+  </data>
+  <data name="CreateAccountDescription" xml:space="preserve">
+    <value>Prvým krokom ku používaniu aplikácie je &lt;a href="/account/home/register"&gt;vytvorenie vlastného účtu&lt;/a&gt;. Pre registráciu bude potrebné zadať vaše krstné meno, priezvisko a emailovú adresu. Osobné údaje si viete kedykoľvek skontrolovať a váš účet si v prípade potreby viete vymazať. Po úspešnej registrácii je potrebné, pred prvým prihlásením, potvrdiť emailovú adresu.</value>
+  </data>
+  <data name="EnterProfile" xml:space="preserve">
+    <value>Zadajte profilové údaje</value>
+  </data>
+  <data name="EnterProfileDescription" xml:space="preserve">
+    <value>Pred spustením plánu, pre vyhodnotenie individuálnych potrieb, bude potrebné zadať následujúce vstupné údaje: vek, váha, výška, pohlavie a úroveň fyzickej aktivity. Je možné limitovať potraviny, na ktoré je používateľ alergický výberom alergénov. &lt;span class="text-danger"&gt;Neodporúčame zadávať nepravdivé údaje, viedlo by to ku skresleným vypočítaným hodnotám.&lt;/span&gt;</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Začať</value>
+  </data>
+  <data name="HowToStart" xml:space="preserve">
+    <value>Ako začnete?</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Úvod</value>
+  </data>
+  <data name="PlansReady" xml:space="preserve">
+    <value>Váš plán je pripravený</value>
+  </data>
+  <data name="PlansReadyDescription" xml:space="preserve">
+    <value>Po úspešnom vykonaní predošlých krokov, je všetko pripravené a váš plán sa nachádza v účte. Plán začína od nasledujúceho kalendárneho dňa. Po úspešnom splnení plánu vám aplikácia poskytne grafické vyhodnotenie a výsledok sa zapíše do histórie. Následne je možné vybrať si nový plán.</value>
+  </data>
+</root>

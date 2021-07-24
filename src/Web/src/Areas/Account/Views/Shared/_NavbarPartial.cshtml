@@ -1,0 +1,18 @@
+﻿<ul class="navbar-nav">
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.SignIn,
+            actionHtmlAttributes = new {
+                area = AreaNames.Account,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Account.Controllers.HomeController.Login)
+            } }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.SignUp,
+            actionHtmlAttributes = new {
+                area = AreaNames.Account,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Account.Controllers.HomeController.Register)
+            } }))
+</ul>

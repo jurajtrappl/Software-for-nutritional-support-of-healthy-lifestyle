@@ -1,0 +1,90 @@
+﻿@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    var translatedMealNames = SharedLocalizer.TranslateEnum<Meal>("MealNames");
+    var translatedSportNames = SharedLocalizer.TranslateEnum<Sport>("SportNames");
+}
+
+<div class="container fullHeight">
+    <div class="row justify-content-around paddingDelimiter30">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center justify-content-center">
+            <img src="~/icons/calendar.png"
+                 width="32"
+                 height="32"
+                 alt="Calendar icon" />
+            <h1 class="mb-0">
+                @DateTime.Today.ToCurrentCultureDateString()
+            </h1>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <h1 class="display-4 mb-0 fontBold text-center">
+                @Localizer["TodaysPlan"]
+            </h1>
+        </div>
+        <div class="col-md-3 col-xs-12 d-flex align-items-center justify-content-center">
+            <img src="~/icons/water.png"
+                 width="32"
+                 height="32"
+                 alt="Water icon" />
+            <h1 class="mb-0">
+                @ViewBag.DrinkingRegime.Amount l @Localizer["BaseWaterEnding"]
+            </h1>
+        </div>
+    </div>
+
+    <div class="planContainer paddingDelimiter30">
+        <div id="slide-left-container">
+            <div class="slide-left borderMing">
+            </div>
+        </div>
+        <div id="cards-container">
+            <div class="cards text-center">
+                @foreach (var planItem in ViewBag.PlanItems)
+                {
+                    <div class="planCard">
+                        <div class="container">
+                            @{
+                                if (planItem.Value is IScheduledMeal)
+                                {
+                                    @(await Component.InvokeAsync<ScheduledMealCardViewComponent>(
+                                        new
+                                        {
+                                            date = planItem.Key,
+                                            translatedMealName = translatedMealNames[planItem.Value.Type]
+                                        }))
+                                }
+                                else
+                                {
+                                    @(await Component.InvokeAsync<ScheduledExerciseCardViewComponent>(
+                                        new {
+                                            duration = planItem.Value.Duration,
+                                            duringDay = Localizer["DuringDay"].Value,
+                                            translatedSportName = translatedSportNames[planItem.Value.Type]
+                                        }))
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div id="slide-right-container">
+            <div class="slide-right borderMing">
+            </div>
+        </div>
+    </div>
+
+    <div class="row paddingDelimiter30">
+        <div id="detailsIngredients"
+             class="col-md-6 col-xs-12">
+            @(await Component.InvokeAsync<HomePageSummaryTableViewComponent>(
+                new { localizer = Localizer, name = "Ingredients" }))
+        </div>
+        <div id="detailsMacroNutrients"
+             class="col-md-6 col-xs-12">
+            @(await Component.InvokeAsync<HomePageSummaryTableViewComponent>(
+                new { localizer = Localizer, name = "NutritionAmounts" }))
+        </div>
+    </div>
+</div>

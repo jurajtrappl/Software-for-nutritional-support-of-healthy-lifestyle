@@ -1,0 +1,93 @@
+﻿@inject IViewLocalizer Localizer
+@model ProfileViewModel
+
+<div class="container justify-content-center fullHeight">
+    <div class="row heightInherit">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "/img/profile.png", alt = "Profile" }))
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center text-center justify-content-center">
+            <div>
+                <h1 class="display-4 fontBold paddingDelimiter15">
+                    @Localizer["Profile"]
+                </h1>
+                <div class="row paddingDelimiter15">
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["FirstName"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.FirstName
+                        </h3>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["LastName"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.LastName
+                        </h3>
+                    </div>
+                </div>
+                <div class="row paddingDelimiter15">
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["Height"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.Height
+                        </h3>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["Weight"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.Weight
+                        </h3>
+                    </div>
+                </div>
+                <div class="row paddingDelimiter15">
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["Sex"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.Sex
+                        </h3>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["Age"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @(Model.Age + " " + Localizer["Years"].Value.ToString())
+                        </h3>
+                    </div>
+                </div>
+                <h1 class="display-4 fontBold paddingDelimiter15">
+                    @Localizer["CurrentPlan"]
+                </h1>
+                <div class="row paddingDelimiter15">
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["AppPlanType"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.AppPlan
+                        </h3>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <h3 class="fontBold">
+                            @Localizer["BMI"]:
+                        </h3>
+                        <h3 class="fontLight">
+                            @Model.Bmi
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

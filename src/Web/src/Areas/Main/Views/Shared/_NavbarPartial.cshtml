@@ -1,0 +1,38 @@
+﻿<ul class="navbar-nav mr-auto">
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Introduction,
+            actionHtmlAttributes = new {
+                area = AreaNames.Main,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Main.Controllers.HomeController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Plans,
+            actionHtmlAttributes = new {
+                area = AreaNames.Main,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Main.Controllers.HomeController.Plans)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Functions,
+            actionHtmlAttributes = new {
+                area = AreaNames.Main,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Main.Controllers.HomeController.Functions)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.BmiCalculator,
+            actionHtmlAttributes = new {
+                area = AreaNames.Main,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.Main.Controllers.HomeController.BmiCalculator)
+            }
+        }))
+</ul>

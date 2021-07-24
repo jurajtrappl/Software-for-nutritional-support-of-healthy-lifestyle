@@ -1,0 +1,136 @@
+﻿/* CSS for App area. */
+
+/* Index horizontal slider */
+.borderRadius5 {
+    border-radius: 5%;
+}
+
+.borderRadius20 {
+    border-radius: 20%;
+}
+
+.borderRadius45 {
+    border-radius: 45%;
+}
+
+.planContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cards-container {
+    overflow: hidden;
+    margin: 20px;
+}
+
+.cards {
+    display: flex;
+    width: 99999px;
+}
+
+.homePageShadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.planCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #fff;
+    transition: 0.3s;
+    height: 200px;
+    width: 235px;
+    margin: 15px 7.5px;
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+}
+
+    .planCard .img {
+        max-width: 220px;
+        height: 220px;
+        display: inline-block;
+    }
+
+#slide-left-container,
+#slide-right-container {
+    display: none;
+}
+
+    #slide-left-container.active,
+    #slide-right-container.active {
+        display: block;
+        cursor: pointer;
+    }
+
+.slide-left,
+.slide-right {
+    border-color: #416a82;
+    border-style: solid;
+    border-width: 5px;
+    height: 20px;
+    width: 20px;
+    margin-top: 30%;
+}
+
+.slide-left {
+    border-width: 4px 0 0 4px;
+    transform: rotate(-45deg);
+    margin-left: 40%;
+}
+
+.slide-right {
+    border-width: 4px 4px 0 0;
+    transform: rotate(45deg);
+    margin-left: 22%;
+}
+
+/* Settings */
+.noBorder {
+    border: 0px !important;
+}
+
+/* Shopping list */
+.shoppingListSummary {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+/* History */
+.resultSize {
+    height: fit-content;
+    width: 95%;
+}
+
+.smallCircle {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-style: solid;
+    border-width: 7px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.circleValue {
+    font-size: 25px;
+    margin-top: -5px;
+}
+
+.resultBorderBottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.widthInherit {
+    width: inherit;
+}
+
+/* Plan result */
+.bigCircle {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-style: solid;
+    border-width: 7px;
+    border-radius: 50%;
+    text-align: center;
+}

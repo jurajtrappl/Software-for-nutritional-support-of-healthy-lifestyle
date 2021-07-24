@@ -1,0 +1,78 @@
+﻿@inject IViewLocalizer Localizer
+
+<div class="container fullHeight">
+    <div class="row heightInherit justify-content-center">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center paddingDelimiter30">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "/img/tips.png", alt = "Tips" }))
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center justify-content-center paddingDelimiter30">
+            <div class="accordion w-100"
+                 id="tipsAccordion">
+                <div class="card noBorder">
+                    <div class="card-header"
+                         id="recommendedHeatModificationsHeading">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#recommendedHeatModifications"
+                                    aria-expanded="false"
+                                    aria-controls="recommendedHeatModifications">
+                                @Localizer["RecommendedHeatModifications"]
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="recommendedHeatModifications"
+                         class="collapse"
+                         aria-labelledby="recommendedHeatModificationsHeading"
+                         ata-parent="#tipsAccordion">
+                        <div class="card-body">
+                            <p>
+                                @Localizer["SteamingDescription"]
+                            </p>
+                            <p>
+                                @Localizer["CookingDescription"]
+                            </p>
+                            <p>
+                                @Localizer["StewingDescription"]
+                            </p>
+                            <p>
+                                @Localizer["BakingDescription"]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card noBorder">
+                    <div class="card-header"
+                         id="bestFlavouringHeading">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-decoration-none text-dark fontLarger fontBold"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#bestFlavouring"
+                                    aria-expanded="false"
+                                    aria-controls="bestFlavouring">
+                                @Localizer["BestFlavouring"]
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="bestFlavouring"
+                         class="collapse"
+                         aria-labelledby="bestFlavouringHeading"
+                         data-parent="#tipsAccordion">
+                        <div class="card-body">
+                            <p>
+                                @Localizer["HerbsDescription"]
+                            </p>
+                            <p>
+                                @Localizer["CitrusDescription"]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

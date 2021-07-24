@@ -1,0 +1,183 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IStringLocalizer<CalendarController> ControllerLocalizer
+@inject IViewLocalizer Localizer
+@inject ICalendarService CalendarService
+@model ExportCalendarModel
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+    var previousMonthData = new CalendarData(ViewBag.Calendar.Year, ViewBag.Calendar.MonthNum).PreviousMonthYearFrom();
+    var nextMonthData = new CalendarData(ViewBag.Calendar.Year, ViewBag.Calendar.MonthNum).NextMonthYearFrom();
+    var monthNames = ControllerLocalizer.ListOf("MonthsNames");
+}
+
+<!-- Calendar section -->
+<div class="container"
+     id="calendar">
+    <div class="justify-content-center calendarTools paddingDelimiter30">
+        <!-- Navigation above calendar (>= 768px (bootstrap md)) -->
+        <div class="calendarViewOptions">
+            <!-- Buttons to change the content of the view -->
+            <div class="btn-group">
+                <!-- Previous -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        onclick="changeMonth(@previousMonthData.Item1, @previousMonthData.Item2)"
+                        id="btnPrev">
+                    <
+                </button>
+                <!-- Today -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        id="btnToday">
+                    @Localizer["TodayButton"]
+                </button>
+                <!-- Next -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        onclick="changeMonth(@nextMonthData.Item1, @nextMonthData.Item2)"
+                        id="btnNext">
+                    >
+                </button>
+            </div>
+
+            <!-- Heading -->
+            <span class="calendarHeading fontBold">
+                @($"{monthNames[ViewBag.Calendar.MonthNum - 1]} {ViewBag.Calendar.Year}")
+            </span>
+
+            <!-- Buttons to change the view -->
+            <div class="btn-group">
+                <!-- Switch to month view -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        id="btnMonth">
+                    @Localizer["MonthViewButton"]
+                </button>
+                <!-- Switch to week view -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        onclick="weekView(@DateTime.Today.Year, @DateTime.Today.Month, @DateTime.Today.Day)"
+                        id="btnWeek">
+                    @Localizer["WeekViewButton"]
+                </button>
+                <!-- Switch to list view -->
+                <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                        onclick="listView(@DateTime.Today.Year, @DateTime.Today.Month, @DateTime.Today.Day)"
+                        id="btnList">
+                    @Localizer["ListViewButton"]
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation above calendar (< 768 px (bootstrap md)) -->
+        <div class="row calendarViewOptionsMobile">
+            <!-- Buttons to change the content of the view -->
+            <div class="col-12">
+                <div class="btn-group d-flex">
+                    <!-- Previous -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            onclick="changeMonth(@previousMonthData.Item1, @previousMonthData.Item2)"
+                            id="btnPrevMobile">
+                        <
+                    </button>
+                    <!-- Today -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            id="btnTodayMobile">
+                        <i class="bi bi-calendar3-event"></i>
+                    </button>
+                    <!-- Next -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            onclick="changeMonth(@nextMonthData.Item1, @nextMonthData.Item2)"
+                            id="btnNextMobile">
+                        >
+                    </button>
+                </div>
+
+                <!-- Heading -->
+                <div class="col-12 text-center">
+                    <span class="calendarHeading fontBold">
+                        @($"{monthNames[ViewBag.Calendar.MonthNum - 1]} {ViewBag.Calendar.Year}")
+                    </span>
+                </div>
+
+                <!-- Buttons to change the view -->
+                <div class="btn-group d-flex">
+                    <!-- Switch to month view -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            id="btnMonthMobile">
+                        <i class="bi bi-calendar3"></i>
+                    </button>
+                    <!-- Switch to week view -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            onclick="weekView(@DateTime.Today.Year, @DateTime.Today.Month, @DateTime.Today.Day)"
+                            id="btnWeekMobile">
+                        <i class="bi bi-calendar-week"></i>
+                    </button>
+                    <!-- Switch to list view -->
+                    <button class="btn btn-lg bgRoyalOrange borderPapayaWhip1"
+                            onclick="listView(@DateTime.Today.Year, @DateTime.Today.Month, @DateTime.Today.Day)"
+                            id="btnListMobile">
+                        <i class="bi bi-card-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar -->
+    <div id="viewTable">
+        <!-- Top row of calendar that shows day names (>= 768px (bootstrap md)) -->
+        <div class="calendarWeekDays">
+            @(await Component.InvokeAsync<CalendarWeekDaysViewComponent>(
+                new { formatter = (Func<string, string>)(name => name) }))
+        </div>
+        <!-- Top row of calendar that shows day names (< 768 px (bootstrap md)) -->
+        <div class="calendarWeekDaysMobile">
+            @(await Component.InvokeAsync<CalendarWeekDaysViewComponent>(
+                new {
+                    formatter = (Func<string, string>)
+                        (name => name.Substring(0, CalendarConstants.WeekDayNameSmallScreenLength)) }))
+        </div>
+        <!-- 6 rows by 7 days calendar format -->
+        <div>
+            @(await Component.InvokeAsync<CalendarViewComponent>(
+                new { user = ViewBag.User, dates = ViewBag.Calendar.Dates }))
+        </div>
+    </div>
+
+    <!-- Modal that displays content after clicking on any icon. -->
+    @(await Component.InvokeAsync<ModalViewComponent>(
+        new {
+            id = "dayContentModal",
+            labelId = "dayContentModalLabel",
+            bodyId = "dayContentModalBodyContent",
+            @class = "modalContent" }))
+</div>
+
+<!-- Export calendar section -->
+<div class="container paddingFooter">
+    <div class="row justify-content-center">
+        <!-- Heading -->
+        <h1 class="display-4 paddingDelimiter15">
+            @Localizer["CalendarExport"]
+        </h1>
+    </div>
+    <div class="row justify-content-center">
+        <!-- Form -->
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label asp-for="Format"
+                       class="fontLarger fontLight">
+                    @Localizer["Format"]
+                </label>
+                @Html.DropDownListFor(
+                    m => m.Format,
+                    (IEnumerable<SelectListItem>)ViewBag.TranslatedCalendarFormats,
+                    new { @class = "form-control form-control-lg fontLight" })
+            </div>
+            <div class="text-center paddingDelimiter15">
+                <button type="submit"
+                        class="btn btn-lg bgRoyalOrange justify-content-center">
+                    @SharedLocalizer["Choose"]
+                </button>
+            </div>
+        }
+    </div>
+</div>

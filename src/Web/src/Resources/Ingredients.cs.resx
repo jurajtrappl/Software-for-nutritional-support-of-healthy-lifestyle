@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Almonds" xml:space="preserve">
+    <value>Mandle</value>
+  </data>
+  <data name="Beans" xml:space="preserve">
+    <value>Fazole</value>
+  </data>
+  <data name="Boneless chicken breast" xml:space="preserve">
+    <value>Vykostěné kuřecí prsa</value>
+  </data>
+  <data name="Boneless turkey breast" xml:space="preserve">
+    <value>Vykostěná krůtí prsa</value>
+  </data>
+  <data name="Broccoli" xml:space="preserve">
+    <value>Brokolice</value>
+  </data>
+  <data name="Buckwheat" xml:space="preserve">
+    <value>Pohanka (vařená)</value>
+  </data>
+  <data name="Bulgur" xml:space="preserve">
+    <value>Bulgur (vařený)</value>
+  </data>
+  <data name="Carrot" xml:space="preserve">
+    <value>Mrkev</value>
+  </data>
+  <data name="Cashews" xml:space="preserve">
+    <value>Kešu oříšky</value>
+  </data>
+  <data name="Cauliflower" xml:space="preserve">
+    <value>Květák</value>
+  </data>
+  <data name="Cereal kaiser roll" xml:space="preserve">
+    <value>Cereální kaiserka</value>
+  </data>
+  <data name="China orange" xml:space="preserve">
+    <value>Mandarinka</value>
+  </data>
+  <data name="Couscous" xml:space="preserve">
+    <value>Kuskus (vařený)</value>
+  </data>
+  <data name="Cucumber" xml:space="preserve">
+    <value>Okurka</value>
+  </data>
+  <data name="Egg white" xml:space="preserve">
+    <value>Bílek</value>
+  </data>
+  <data name="Eggplant" xml:space="preserve">
+    <value>Baklažán</value>
+  </data>
+  <data name="Fish fillet" xml:space="preserve">
+    <value>Rybí filé</value>
+  </data>
+  <data name="Flax oil" xml:space="preserve">
+    <value>Lněný olej</value>
+  </data>
+  <data name="Ghee butter" xml:space="preserve">
+    <value>Máslo ghee</value>
+  </data>
+  <data name="Gluten free bread" xml:space="preserve">
+    <value>Bezlepkový chléb</value>
+  </data>
+  <data name="Gluten free bread roll" xml:space="preserve">
+    <value>Bezlepkový rohlík</value>
+  </data>
+  <data name="Gluten free kaiser roll" xml:space="preserve">
+    <value>Bezlepková kaiserka</value>
+  </data>
+  <data name="Graham bread" xml:space="preserve">
+    <value>Grahamový chléb</value>
+  </data>
+  <data name="Graham pasta" xml:space="preserve">
+    <value>Grahamové těstoviny (vařené)</value>
+  </data>
+  <data name="Grape" xml:space="preserve">
+    <value>Hrozny</value>
+  </data>
+  <data name="Greek yogurt" xml:space="preserve">
+    <value>Řecký jogurt</value>
+  </data>
+  <data name="Ham 95%" xml:space="preserve">
+    <value>Šunka (95% maso)</value>
+  </data>
+  <data name="Honey" xml:space="preserve">
+    <value>Med</value>
+  </data>
+  <data name="Iceberg lettuce" xml:space="preserve">
+    <value>Ledový salát</value>
+  </data>
+  <data name="Millet" xml:space="preserve">
+    <value>Jáhly (vařené)</value>
+  </data>
+  <data name="Olive oil" xml:space="preserve">
+    <value>Olivový olej</value>
+  </data>
+  <data name="Orange" xml:space="preserve">
+    <value>Pomeranč</value>
+  </data>
+  <data name="Paddy rice" xml:space="preserve">
+    <value>Neloupaná rýže (vařená)</value>
+  </data>
+  <data name="Paprika" xml:space="preserve">
+    <value>Paprika</value>
+  </data>
+  <data name="Pea pasta" xml:space="preserve">
+    <value>Hráchové těstoviny (vařené)</value>
+  </data>
+  <data name="Peanuts" xml:space="preserve">
+    <value>Arašídy</value>
+  </data>
+  <data name="Potatoes" xml:space="preserve">
+    <value>Brambory</value>
+  </data>
+  <data name="Protein powder" xml:space="preserve">
+    <value>Proteinový prášek</value>
+  </data>
+  <data name="Quinoa" xml:space="preserve">
+    <value>Quinoa (vařená)</value>
+  </data>
+  <data name="Rabbit meat" xml:space="preserve">
+    <value>Králičí maso</value>
+  </data>
+  <data name="Rapeseed oil" xml:space="preserve">
+    <value>Řepkový olej</value>
+  </data>
+  <data name="Rumpsteak" xml:space="preserve">
+    <value>Zadní hovězí</value>
+  </data>
+  <data name="Rye knäckebrot" xml:space="preserve">
+    <value>Žitný knäckebrot</value>
+  </data>
+  <data name="Rye whole-grain bread" xml:space="preserve">
+    <value>Žitný celozrnný chléb</value>
+  </data>
+  <data name="Salmon" xml:space="preserve">
+    <value>Losos</value>
+  </data>
+  <data name="Salmon radish" xml:space="preserve">
+    <value>Ředkev</value>
+  </data>
+  <data name="Sesame oil" xml:space="preserve">
+    <value>Sezamový olej</value>
+  </data>
+  <data name="Skyr" xml:space="preserve">
+    <value>Skyr</value>
+  </data>
+  <data name="Smoked tofu" xml:space="preserve">
+    <value>Uzené tofu</value>
+  </data>
+  <data name="Soft semi-fat cottage cheese" xml:space="preserve">
+    <value>Měkký polotučný tvaroh</value>
+  </data>
+  <data name="Sourdough rye bread" xml:space="preserve">
+    <value>Kváskový žitný chléb</value>
+  </data>
+  <data name="Soy bread roll" xml:space="preserve">
+    <value>Sójový rohlík</value>
+  </data>
+  <data name="Tomatoes" xml:space="preserve">
+    <value>Rajčata</value>
+  </data>
+  <data name="Trout" xml:space="preserve">
+    <value>Pstruh</value>
+  </data>
+  <data name="Tuna in its own juice" xml:space="preserve">
+    <value>Tuňák ve vlastní šťávě</value>
+  </data>
+  <data name="Walnuts" xml:space="preserve">
+    <value>Vlašské ořechy</value>
+  </data>
+  <data name="Whole-grain bread roll" xml:space="preserve">
+    <value>Celozrnný rohlík</value>
+  </data>
+  <data name="Zucchini" xml:space="preserve">
+    <value>Cuketa</value>
+  </data>
+</root>

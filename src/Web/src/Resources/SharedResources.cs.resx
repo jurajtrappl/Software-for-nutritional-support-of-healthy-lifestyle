@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivityDifficulties" xml:space="preserve">
+    <value>Bez pohybu, Lehký pohyb (1-2x týdně), Mírný pohyb (3-5x týdně)</value>
+  </data>
+  <data name="AddOwnMovementFeature" xml:space="preserve">
+    <value>Přidat vlastní pohyb</value>
+  </data>
+  <data name="Allergens" xml:space="preserve">
+    <value>Obiloviny obsahující lepek, Korýši,Arašídy,Celer, Hořčice,Sezamová semena,Oxid siřičitý a siřičitany,Měkkýši</value>
+  </data>
+  <data name="AlreadyRegisteredEmail" xml:space="preserve">
+    <value>Uživatel se stejnou emailovou adresou již existuje.</value>
+  </data>
+  <data name="AlreadyRegisteredUsername" xml:space="preserve">
+    <value>Uživatel se stejným uživatelským jménem již existuje.</value>
+  </data>
+  <data name="AppLang" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="ApplicationPlans" xml:space="preserve">
+    <value>Optimální plán, Redukční plán, Sportovní plán</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Aplikace</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Vyváženost</value>
+  </data>
+  <data name="BalanceDescription" xml:space="preserve">
+    <value>Energeticky optimální denní množství potravy je takové, které udržuje normální hmotnost těla (&lt;b&gt; sacharidy &lt;/ b&gt; - 50%, &lt;b&gt; tuky &lt;/ b&gt; - 30% a &lt;b&gt; bílkoviny &lt;/ b&gt; zbytek).</value>
+  </data>
+  <data name="BmiCalculatorNavLink" xml:space="preserve">
+    <value>BMI kalkulačka</value>
+  </data>
+  <data name="CalendarNavLink" xml:space="preserve">
+    <value>Kalendář</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Vybrat</value>
+  </data>
+  <data name="Colorfulness" xml:space="preserve">
+    <value>Pestrost</value>
+  </data>
+  <data name="ColorfulnessDescription" xml:space="preserve">
+    <value>Pro dostatečný příjem všech potřebných živin, vlákniny a mikronutrientů je důležité konzumovat pestrou, smíšenou stravu (častá konzumace celozrnných obilnin, ovoce, syrové a vařené zeleniny a nízkotučných živočišných potravin).</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Pokračujte</value>
+  </data>
+  <data name="cs" xml:space="preserve">
+    <value>Český</value>
+  </data>
+  <data name="DrinkingRegimeFeature" xml:space="preserve">
+    <value>Pitný režim</value>
+  </data>
+  <data name="FunctionsNavLink" xml:space="preserve">
+    <value>Funkce</value>
+  </data>
+  <data name="HealthyNutrition" xml:space="preserve">
+    <value>Zdravá strava</value>
+  </data>
+  <data name="HealthyNutritionDescription" xml:space="preserve">
+    <value>Zdravá strava má být především pestrá, pravidelná a vyvážená.</value>
+  </data>
+  <data name="HelpNavLink" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="HistoryNavLink" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="HomeNavLink" xml:space="preserve">
+    <value>Domů</value>
+  </data>
+  <data name="IntroductionNavLink" xml:space="preserve">
+    <value>Úvod</value>
+  </data>
+  <data name="LangAttribute" xml:space="preserve">
+    <value>cs</value>
+  </data>
+  <data name="LogOffButtonName" xml:space="preserve">
+    <value>Odhlásit</value>
+  </data>
+  <data name="MacroNutrients" xml:space="preserve">
+    <value>Sacharidy,Tuky,Proteiny</value>
+  </data>
+  <data name="MealNames" xml:space="preserve">
+    <value>Snídaně, Svačina, Oběd, Svačina, Večeře, Druhá večeře</value>
+  </data>
+  <data name="MealPlanFeature" xml:space="preserve">
+    <value>Jídelníček</value>
+  </data>
+  <data name="MentalComfort" xml:space="preserve">
+    <value>Psychická pohoda</value>
+  </data>
+  <data name="MentalComfortDescription" xml:space="preserve">
+    <value>Nedílnou součástí zdravého těla je i zdravý duch a perfektní mentální nastavení.</value>
+  </data>
+  <data name="OptimalPlan" xml:space="preserve">
+    <value>Optimální plán</value>
+  </data>
+  <data name="OptimalPlanDescription" xml:space="preserve">
+    <value>Chci se naučit zdravě stravovat a udržet tělesnou hmotnost.</value>
+  </data>
+  <data name="OptimalPlanInfoHeading" xml:space="preserve">
+    <value>Zdravá strava má být především &lt;b&gt; pestrá &lt;/ b&gt;, &lt;b&gt; pravidelná &lt;/ b&gt; a &lt;b&gt; vyvážená &lt;/ b&gt;.</value>
+  </data>
+  <data name="OptimalPlanRequirements" xml:space="preserve">
+    <value>Index tělesné hmotnosti (BMI) v rozmezí 18,5 - 25.</value>
+  </data>
+  <data name="PhysicalActivity" xml:space="preserve">
+    <value>Pohybová aktivita</value>
+  </data>
+  <data name="PhysicalActivityDescription" xml:space="preserve">
+    <value>Zařazení fyzické aktivity do redukčního režimu výrazně zvyšuje ztráty tuku a tedy i hmotnosti těla. Důležité je volit takový pohyb, který je především aerobního charakteru např. běh, plavání apod. v dostatečné délce a frekvenci.</value>
+  </data>
+  <data name="PlanLength" xml:space="preserve">
+    <value>28 dní</value>
+  </data>
+  <data name="PlansNavLink" xml:space="preserve">
+    <value>Plány</value>
+  </data>
+  <data name="ProfileNavLink" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="ReducePlan" xml:space="preserve">
+    <value>Redukční plán</value>
+  </data>
+  <data name="ReducePlanDescription" xml:space="preserve">
+    <value>Chcem schudnúť zdravo a trvalo.</value>
+  </data>
+  <data name="ReducePlanInfoHeading" xml:space="preserve">
+    <value>Nedržte diety, ale změňte svůj životní styl. Jak tedy zhubnout zdravě a trvale?</value>
+  </data>
+  <data name="ReducePlanRequirements" xml:space="preserve">
+    <value>Index tělesné hmotnosti (BMI) více než 25.</value>
+  </data>
+  <data name="Regeneration" xml:space="preserve">
+    <value>Regenerace</value>
+  </data>
+  <data name="RegenerationDescription" xml:space="preserve">
+    <value>Potřebná doba spánku na dostatečnou regeneraci je 8h. Nejkvalitnější spánek je před půlnocí.</value>
+  </data>
+  <data name="Regularity" xml:space="preserve">
+    <value>Pravidelnost</value>
+  </data>
+  <data name="RegularityDescription" xml:space="preserve">
+    <value>Významným a často opomíjeným faktorem je dodržování pravidelné frekvence příjmu potravy. Se správným rozložením příjmu energie v průběhu dne - 3 hlavní jídla s 1-2 menšími porcemi.</value>
+  </data>
+  <data name="SettingsNavLink" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="SexTypes" xml:space="preserve">
+    <value>Žena,Muž</value>
+  </data>
+  <data name="ShoppingListNavLink" xml:space="preserve">
+    <value>Nákupní seznam</value>
+  </data>
+  <data name="ShowDayTabs" xml:space="preserve">
+    <value>Pitný režim, Cvičební plán, Jídla</value>
+  </data>
+  <data name="SignInNavLink" xml:space="preserve">
+    <value>Přihlásit se</value>
+  </data>
+  <data name="SignUpNavLink" xml:space="preserve">
+    <value>Registrace</value>
+  </data>
+  <data name="sk" xml:space="preserve">
+    <value>Slovenský</value>
+  </data>
+  <data name="SomethingWentWrongApplication" xml:space="preserve">
+    <value>Něco se pokazilo. Zkuste to znovu.</value>
+  </data>
+  <data name="SomethingWentWrongDatabase" xml:space="preserve">
+    <value>Problém s údaji. Zkuste to znovu.</value>
+  </data>
+  <data name="SportNames" xml:space="preserve">
+    <value>Plavání, Chůze, Švihadlo, Zumba, Aerobik, Stepper, Sauna, Kruhový trénink, Rotoped, Cyklistika, Běhání</value>
+  </data>
+  <data name="SportPlan" xml:space="preserve">
+    <value>Sportovní plán</value>
+  </data>
+  <data name="SportPlanDescription" xml:space="preserve">
+    <value>Chci si udržet sportovní výkon.</value>
+  </data>
+  <data name="SportPlanInfoHeading" xml:space="preserve">
+    <value>Výživa při fyzické aktivitě, pokud není extrémně náročná (rekreační a neprofesionální sport nebo středně těžká manuální práce) se řídí zásadami správné výživy s ohledem na předpokládané potřeby energie a živin. Jídelní plán je tedy přizpůsoben zvýšené fyzické aktivitě.</value>
+  </data>
+  <data name="SportPlanRequirements" xml:space="preserve">
+    <value>Kulturistika, bodybuilding, vzpírání, silový trojboj, ...</value>
+  </data>
+  <data name="StatisticsNavLink" xml:space="preserve">
+    <value>Statistika</value>
+  </data>
+  <data name="TipsNavLink" xml:space="preserve">
+    <value>Tipy</value>
+  </data>
+</root>

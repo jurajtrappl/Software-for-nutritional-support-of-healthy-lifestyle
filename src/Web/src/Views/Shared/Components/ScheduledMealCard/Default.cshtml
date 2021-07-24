@@ -1,0 +1,12 @@
+﻿@using Application.Web.Views.Shared.Components
+@model ScheduledMealCardViewModel
+
+<h1>
+    @Model.TranslatedMealName
+</h1>
+<h2>
+    @Model.FormattedDateAndTime
+</h2>
+<button class="btn text-white bgRoyalOrange borderRadius45"
+        onclick="showMealOnHomePage('@Model.DatabaseKeyDate')">>
+</button>

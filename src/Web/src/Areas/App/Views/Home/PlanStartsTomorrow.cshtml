@@ -1,0 +1,25 @@
+﻿@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container fullHeight">
+    <div class="row heightInherit d-flex align-items-center justify-content-center text-center">
+        <div>
+            <div class="paddingDelimiter15">
+                @(await Component.InvokeAsync<ImageViewComponent>(
+                    new {
+                        path = "/img/planStartsTomorrow.png",
+                        alt = "Plan starts tomorrow",
+                        @class = "imgLimited400" }))
+            </div>
+            <div class="paddingDelimiter15">
+                <h1 class="display-4 text-center">
+                    @Localizer["PlanStartsTomorrow"]
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container fullHeight">
+    <div class="row d-flex align-items-center heightInherit justify-content-center">
+        <div>
+            <div class="paddingDelimiter15 text-center">
+                @(await Component.InvokeAsync<ImageViewComponent>(
+                    new { path = "/img/applicationError.png", alt = "Application error", @class = "imgLimited400" }))
+            </div>
+            <div class="paddingDelimiter15">
+                <h1 class="text-center">
+                    @SharedLocalizer["SomethingWentWrongApplication"]
+                </h1>
+            </div>
+            <div class="paddingDelimiter15 text-center">
+                <a href="@Url.RouteUrl(
+                            new {
+                                action = nameof(Application.Web.Areas.Main.Controllers.HomeController.Index),
+                                controller = ControllerNames.Home,
+                                area = AreaNames.Main })"
+                   class="btn btn-lg bgRoyalOrange">
+                    @SharedLocalizer["Continue"]
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

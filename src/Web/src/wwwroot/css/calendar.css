@@ -1,0 +1,187 @@
+﻿/* Calendar */
+
+.borderPapayaWhip1 {
+    border: 1px solid #ffefd5;
+}
+
+.calendarHeading {
+    font-size: 35px;
+}
+
+.calendarTools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendarWeekDay {
+    border: 1px solid #ddd;
+    background-color: #fbfbfb;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (min-width: 992px) {
+    .calendarWeekDays {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .calendarWeekDaysMobile {
+        display: none;
+    }
+
+    .calendarViewOptions {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .calendarViewOptionsMobile {
+        display: none;
+    }
+
+    /* Calendar view */
+    .monthDay {
+        border: 1px solid #ddd;
+        width: 100%;
+        height: 100px;
+        padding: 10px 10px 0 0;
+    }
+
+    /* Week view */
+    .hourField {
+        border-bottom: 1px solid #ddd;
+        height: 40px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .timeColHourField {
+        border-bottom: 1px solid #ddd;
+        height: 40px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    /* List view */
+    .iconListViewMargin {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .calendarWeekDays {
+        display: none;
+    }
+
+    .calendarWeekDaysMobile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .calendarViewOptions {
+        display: none;
+    }
+
+    .calendarViewOptionsMobile {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Calendar view */
+    .monthDay {
+        border: 1px solid #ddd;
+        width: 100%;
+        height: 150px;
+        padding: 10px 10px 0 0;
+    }
+
+    /* Week view */
+    .timeColHourField {
+        border-bottom: 1px solid #ddd;
+        height: 75px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .hourField {
+        border-bottom: 1px solid #ddd;
+        height: 75px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    /* List view */
+    .iconListViewMargin {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+}
+
+.monthWeek {
+    display: flex;
+    justify-content: space-between;
+}
+
+.monthDay:hover {
+    background-color: lightgray;
+}
+
+.monthDayDisabled {
+    color: gray;
+}
+
+    .monthDayDisabled:hover {
+        background-color: transparent !important;
+    }
+
+.monthDayField {
+    text-align: right;
+    font-weight: 400;
+}
+
+.monthDayFoods {
+    text-align: left;
+}
+
+/* Week view */
+.dayCol {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.timeCol {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.week {
+    display: flex;
+}
+
+.hourField:hover {
+    background-color: lightgray;
+}
+
+/* List view */
+
+.listItem {
+    border: 1px solid #ddd;
+}
+
+.mealsSummary {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.dateHeader {
+    height: 25px;
+    font-weight: 600;
+}
+
+.iconRowHeight {
+    height: 50px;
+}

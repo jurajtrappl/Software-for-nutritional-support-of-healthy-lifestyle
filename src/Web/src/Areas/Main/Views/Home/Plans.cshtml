@@ -1,0 +1,62 @@
+﻿@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container pb-5">
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            name = ApplicationPlan.Optimal.ToString(),
+            colNames = new string[] { "Colorfulness", "Regularity", "Balance" }
+        }))
+    <div class="row justify-content-center">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.Main.Controllers.HomeController.ChoosePlanInAdvance),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.Main,
+                        planName = ApplicationPlan.Optimal.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            name = ApplicationPlan.Sport.ToString(),
+            colNames = new string[] { }
+        }))
+    <div class="row justify-content-center">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.Main.Controllers.HomeController.ChoosePlanInAdvance),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.Main,
+                        planName = ApplicationPlan.Sport.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+
+    @(await Component.InvokeAsync<PlanDescriptionViewComponent>(
+        new
+        {
+            name = ApplicationPlan.Reduce.ToString(),
+            colNames = new string[] { "HealthyNutrition", "PhysicalActivity", "Regeneration", "MentalComfort" }
+        }))
+    <div class="row justify-content-center">
+        <a class="btn btn-lg fontLarge bgRoyalOrange"
+           href="@Url.RouteUrl(
+                    new {
+                        action = nameof(Application.Web.Areas.Main.Controllers.HomeController.ChoosePlanInAdvance),
+                        controller = ControllerNames.Home,
+                        area = AreaNames.Main,
+                        planName = ApplicationPlan.Reduce.ToString() })">
+            @SharedLocalizer["Choose"]
+        </a>
+    </div>
+</div>

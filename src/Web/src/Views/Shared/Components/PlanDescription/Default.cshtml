@@ -1,0 +1,35 @@
+﻿@using Application.Web.Views.Shared.Components
+@model PlanDescriptionViewModel
+
+<div id="@(Model.Name + "Plan")"
+     class="jumbotron bg-white">
+    <div class="container">
+        <h1 class="display-2 text-center">
+            @Model.Localizer[Model.Name + "Plan"]
+        </h1>
+        <h1 class="fontExtraLightItalic">
+            @Model.Localizer[Model.Name + "PlanDescription"]
+        </h1>
+        <hr />
+        <h1>
+            @Model.Localizer[Model.Name + "PlanRequirements"]
+        </h1>
+        <hr />
+        <p class="fontLarge">
+            @Model.Localizer[Model.Name + "PlanInfoHeading"]
+        </p>
+        <div class="row justify-content-between">
+            @foreach (var colName in Model.InfoColumnNames)
+            {
+                <div class="col-md-@Model.ScreenRatio col-xs-12">
+                    <p class="fontLarger fontExtraBold">
+                        @Model.Localizer[colName]
+                    </p>
+                    <p>
+                        @Model.Localizer[colName + "Description"]
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

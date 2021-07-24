@@ -1,0 +1,73 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+<!DOCTYPE html>
+<html lang="@SharedLocalizer["LangAttribute"]">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@($"{SharedLocalizer["AppName"].Value}")</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/app.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/shared.css" />
+    <link rel="stylesheet" href="~/css/calendar.css" />
+    <link rel="stylesheet" href="~/css/color.css" />
+    <link rel="stylesheet" href="~/css/flags.css" />
+
+    <!-- JS -->
+    <script type="module" src="~/js/ajaxRequests.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bgPapayaWhip">
+            <div class="d-flex align-items-center justify-content-between vw-100">
+                <div>
+                    <a class="navbar-brand"
+                       href="@Url.RouteUrl(
+                                new {
+                                    area = AreaNames.App,
+                                    controller = ControllerNames.Home,
+                                    action = nameof(Application.Web.Areas.App.Controllers.HomeController.Index) })">
+                        <img src="~/img/logo.png"
+                             width="45"
+                             height="45"
+                             alt="Logo">
+                    </a>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    @using (Html.BeginForm(
+                       nameof(Application.Web.Areas.Account.Controllers.HomeController.Logout),
+                       ControllerNames.Home,
+                       new { area = AreaNames.Account },
+                       FormMethod.Post,
+                       antiforgery: true,
+                       new { id = "logoutForm" }))
+                    {
+                        <button class="nav-link"
+                                style="background: none !important; border: none;"
+                                onclick="document.getElementById('logoutForm').submit()">
+                            <img src="~/icons/log-out.png"
+                                 height="32"
+                                 width="32"
+                                 alt="Log out icon" />
+                        </button>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pageContainer">
+        <div class="contentWrap">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

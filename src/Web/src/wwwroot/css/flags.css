@@ -1,0 +1,20 @@
+﻿/* CSS for localization. */
+
+.flagIcon {
+    position: relative;
+    display: inline-block;
+    line-height: 1em;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.flagSk {
+    background-image: url(/icons/sk.svg);
+}
+
+.flagCz {
+    background-image: url(/icons/cz.svg);
+}

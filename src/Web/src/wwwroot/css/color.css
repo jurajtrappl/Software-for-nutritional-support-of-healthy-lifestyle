@@ -1,0 +1,100 @@
+﻿/* Chosen color scheme of colors: Royal Orange, Peru, Camouflage green, Ming and Blue sapphire */
+
+/* Royal Orange */
+.bgRoyalOrangeWithOpacity5 {
+    background-color: rgba(253, 153, 69, 0.05);
+}
+
+.bgRoyalOrange {
+    background-color: #FD9945;
+}
+
+.borderRoyalOrange {
+    border-color: #FD9945;
+}
+
+.textColorRoyalOrange {
+    color: #FD9945;
+}
+
+/* Peru */
+.bgPeruWithOpacity5 {
+    background-color: rgba(202, 131, 63, 0.05)
+}
+
+.bgPeru {
+    background-color: #CA833F;
+}
+
+.borderPeru {
+    border-color: #CA833F;
+}
+
+.textColorPeru {
+    color: #CA833F;
+}
+
+/* Camouflage green */
+.bgCamouflageGreenWithOpacity5 {
+    background-color: rgba(129, 124, 104, 0.05);
+}
+
+.bgCamouflageGreen {
+    background-color: #817C68;
+}
+
+.borderCamouflageGreen {
+    border-color: #817C68;
+}
+
+.textColorCamouflageGreen {
+    color: #817C68;
+}
+
+/* Ming */
+.bgMingWithOpacity5 {
+    background-color: rgba(65, 106, 130, 0.05);
+}
+
+.bgMing {
+    background-color: #416A82;
+}
+
+.borderMing {
+    border-color: #416A82;
+}
+
+.textColorMing {
+    color: #416A82;
+}
+
+/* Blue Sapphire */
+.bgBlueSapphireWithOpacity {
+    background-color: rgba(26, 88, 139, 0.05);
+}
+
+.bgBlueSapphire {
+    background-color: #1A588B;
+}
+
+.borderBlueSapphire {
+    border-color: #1a588b;
+}
+
+.textColorBlueSapphire {
+    color: #1a588b;
+}
+
+/* Common */
+
+.textBlack {
+    color: black;
+}
+
+.bgPapayaWhip {
+    background-color: papayawhip;
+}
+
+.colorPapayaWhip {
+    color: papayawhip;
+}

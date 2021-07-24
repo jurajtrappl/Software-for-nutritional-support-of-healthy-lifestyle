@@ -1,0 +1,37 @@
+﻿@using Application.Web.Views.Shared.Components
+@using Application.Infrastructure.Extensions
+@model CalendarDayViewModel
+
+<div class="monthDay position-relative">
+    <div class="monthDayField">
+        @($"{Model.Date.Day}")
+    </div>
+    <div class="position-absolute bottomLeft">
+        @if (Model.User.HasMealPlanOnDate(Model.Date))
+        {
+            <a class="mealItem"
+               onclick="showMeals(@($"\"{Model.DateAsKey}\""))">
+                <img src="~/icons/soup.png"
+                     alt="Meal icon" />
+            </a>
+        }
+
+        @if (Model.User.HasExercisePlanOnDate(Model.Date))
+        {
+            <a class="exerciseItem"
+               onclick="showExercise(@($"\"{Model.DateAsKey}\""))">
+                <img src="~/icons/exercise.png"
+                     alt="Exercise icon" />
+            </a>
+        }
+
+        @if (Model.User.HasDrinkingRegimeOnDate(Model.Date))
+        {
+            <a class="drinkingRegimeItem"
+               onclick="showDrinkingRegime(@($"\"{Model.DateAsKey}\""))">
+                <img src="~/icons/water.png"
+                     alt="Drinking regime icon" />
+            </a>
+        }
+    </div>
+</div>

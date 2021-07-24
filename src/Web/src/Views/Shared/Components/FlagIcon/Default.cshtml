@@ -1,0 +1,15 @@
+﻿@using Application.Web.Constants
+@using Application.Web.Views.Shared.Components
+@model FlagIconViewModel
+
+<a href="@Url.Action(
+            nameof(Application.Web.Areas.Management.Controllers.CultureController.SetCulture),
+            ControllerNames.Culture,
+            new {
+                area = AreaNames.Management,
+                currentCultureName = Model.CurrentCultureName,
+                returnUrl = Model.ReturnUrl })"
+   role="button"
+   class="btn btn-lg d-flex align-items-center border-dark w-100 justify-content-center">
+    <span class="flagIcon @Model.IconClass"></span>
+</a>

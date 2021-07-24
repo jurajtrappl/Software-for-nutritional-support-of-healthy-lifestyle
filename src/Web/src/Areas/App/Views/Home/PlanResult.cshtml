@@ -1,0 +1,92 @@
+﻿@inject IViewLocalizer Localizer
+
+@{
+    Layout = "~/Areas/App/Views/Shared/_EmptyNavbarLayout.cshtml";
+}
+
+@functions{
+    string ToDateString(DateTime date) => date.ToCurrentCultureDateString();
+}
+
+<div class="container fullHeight">
+    <div class="heightInherit align-items-center">
+        <div class="row mt-5">
+            <div class="col-md-6 col-xs-12 text-center">
+                <h1 class="fontBold">
+                    @Localizer["Beginning"]
+                </h1>
+                <h2>
+                    @ToDateString(ViewBag.PlanResult.Start)
+                </h2>
+            </div>
+            <div class="col-md-6 col-xs-12 text-center">
+                <h1 class="fontBold">
+                    @Localizer["End"]
+                </h1>
+                <h2>
+                    @ToDateString(ViewBag.PlanResult.End)
+                </h2>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-4 col-xs-12 paddingDelimiter15">
+                <h1 class="fontBold textColorBlueSapphire">
+                    @Localizer["MealsEaten"]
+                </h1>
+                <div class="justify-content-center mr-auto ml-auto bigCircle textColorBlueSapphire fontLarger">
+                    <div class="fontExtraLight fontSize50">
+                        @ViewBag.PlanResult.TotalMealsCount
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 paddingDelimiter15">
+                <h1 class="fontBold textColorCamouflageGreen">
+                    @Localizer["TotalKilojoules"]
+                </h1>
+                <div class="justify-content-center mr-auto ml-auto bigCircle textColorCamouflageGreen fontLarger">
+                    <div class="fontExtraLight fontSize50">
+                        @ViewBag.PlanResult.TotalKjEaten
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 paddingDelimiter15">
+                <h1 class="fontBold textColorRoyalOrange">
+                    @Localizer["ExercisedMinutes"]
+                </h1>
+                <div class="justify-content-center mr-auto ml-auto bigCircle textColorRoyalOrange fontLarger">
+                    <div class="fontExtraLight fontSize50">
+                        @ViewBag.PlanResult.TotalMinTrained
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-6 col-xs-12">
+                <h1 class="fontBold">
+                    @Localizer["BeginningBMI"]
+                </h1>
+                <h2>
+                    @ViewBag.PlanResult.PreviousBmi
+                </h2>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <h1 class="fontBold">
+                    @Localizer["BMINow"]
+                </h1>
+                <h2>
+                    @ViewBag.PlanResult.CurrentBmi
+                </h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5 paddingDelimiter15">
+            <a href="@Url.RouteUrl(
+                        new {
+                            action = nameof(Application.Web.Areas.App.Controllers.HomeController.EndPlan),
+                            controller = ControllerNames.Home,
+                            area = AreaNames.App })"
+               class="btn btn-lg bgRoyalOrange">
+                @Localizer["EndPlan"]
+            </a>
+        </div>
+    </div>
+</div>

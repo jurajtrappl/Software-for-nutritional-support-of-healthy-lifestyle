@@ -1,0 +1,65 @@
+﻿<ul class="navbar-nav">
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Home,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.Home,
+                action = nameof(Application.Web.Areas.App.Controllers.HomeController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Profile,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.Profile,
+                action = nameof(Application.Web.Areas.App.Controllers.ProfileController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Calendar,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.Calendar,
+                action = nameof(Application.Web.Areas.App.Controllers.CalendarController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.ShoppingList,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.ShoppingList,
+                action = nameof(Application.Web.Areas.App.Controllers.ShoppingListController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.History,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.History,
+                action = nameof(Application.Web.Areas.App.Controllers.HistoryController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Settings,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.Settings,
+                action = nameof(Application.Web.Areas.App.Controllers.SettingsController.Index)
+            }
+        }))
+    @(await Component.InvokeAsync<NavbarLinkViewComponent>(
+        new {
+            name = NavbarLinks.Tips,
+            actionHtmlAttributes = new {
+                area = AreaNames.App,
+                controller = ControllerNames.Tips,
+                action = nameof(Application.Web.Areas.App.Controllers.TipsController.Index)
+            }
+        }))
+</ul>

@@ -1,0 +1,20 @@
+﻿@using Application.Web.Views.Shared.Components
+@model FunctionDescriptionViewModel
+
+<div class="col-md-3 col-xs-12 functionCol functionContentMargin">
+    <div class="row">
+        <div class="col-2 d-flex align-items-center">
+            <img src="~/icons/@Model.IconName" />
+        </div>
+        <div class="col-10 d-flex align-items-center">
+            <h1 class="mb-0">
+                @Model.Localizer![Model.ColName]
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <p class="functionDescriptionMargin">
+            @Model.Localizer![Model.ColName + "Description"]
+        </p>
+    </div>
+</div>

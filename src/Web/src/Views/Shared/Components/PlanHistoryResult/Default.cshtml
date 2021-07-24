@@ -1,0 +1,63 @@
+﻿@using Application.Web.Views.Shared.Components
+@model PlanHistoryResultViewModel
+
+<div class="container mt-3 mb-3 homePageShadow borderRadius5 resultSize">
+    <div class="row text-center resultBorderBottom">
+        <div class="col-md-6 col-xs-12">
+            <h1 class="fontBold">
+                @Model.Start - @Model.End
+            </h1>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <h1 class="fontLight">
+                @Model.TranslatedPlanNames[Model.PlanHistory.AppPlan]
+            </h1>
+        </div>
+    </div>
+    <div class="row text-center mt-3 pb-3 resultBorderBottom">
+        <div class="col-md-4 col-xs-12 textColorBlueSapphire">
+            <h5 class="fontBold">
+                @Model.Localizer["TotalMealsEaten"]
+            </h5>
+            <div class="justify-content-center mr-auto ml-auto mb-2 smallCircle fontLarger">
+                <div class="fontExtraLight circleValue">
+                    @Model.PlanHistory.TotalMealsCount
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 textColorCamouflageGreen">
+            <h5 class="fontBold">
+                @Model.Localizer["TotalKj"]
+            </h5>
+            <div class="justify-content-center mr-auto ml-auto mb-2 smallCircle fontLarger">
+                <div class="fontExtraLight circleValue">
+                    @Model.PlanHistory.TotalKjEaten
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 textColorRoyalOrange">
+            <h5 class="fontBold">
+                @Model.Localizer["TotalMinutesExercised"]
+            </h5>
+            <div class="justify-content-center mr-auto ml-auto mb-2 smallCircle fontLarger">
+                <div class="fontExtraLight circleValue">
+                    @Model.PlanHistory.TotalMinTrained
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-12 text-center">
+            <h3>
+                <span class="fontBold">@Model.Localizer["BeginningBMI"]:</span>
+                <span>@Model.PlanHistory.PreviousBmi</span>
+            </h3>
+        </div>
+        <div class="col-md-6 col-xs-12 text-center">
+            <h3>
+                <span class="fontBold">@Model.Localizer["BMINow"]:</span>
+                <span>@Model.PlanHistory.CurrentBmi</span>
+            </h3>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  application.web:
+    image: ${DOCKER_REGISTRY}applicationweb
+    build:
+      context: .
+      dockerfile: src\Web\src\Dockerfile

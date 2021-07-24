@@ -1,0 +1,36 @@
+﻿@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@{
+    Layout = "~/Areas/App/Views/Shared/_EmptyNavbarLayout.cshtml";
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container fullHeight">
+    <div class="row d-flex align-items-center heightInherit justify-content-center">
+        <div>
+            <div class="paddingDelimiter15 text-center">
+                @(await Component.InvokeAsync<ImageViewComponent>(
+                    new {
+                        path = "/img/ok.png",
+                        alt = "Successful plan entry",
+                        @class = "imgLimited400" }))
+            </div>
+            <div class="paddingDelimiter15">
+                <h1 class="text-center">
+                    @Localizer["SuccessfulMessage"]
+                </h1>
+            </div>
+            <div class="paddingDelimiter15 text-center">
+                <a href="@Url.RouteUrl(
+                            new {
+                                action = nameof(Application.Web.Areas.App.Controllers.HomeController.Index),
+                                controller = ControllerNames.Home,
+                                area = AreaNames.App })"
+                   class="btn btn-lg bgRoyalOrange">
+                    @Localizer["Continue"]
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

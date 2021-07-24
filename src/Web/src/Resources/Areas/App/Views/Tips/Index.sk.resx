@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BakingDescription" xml:space="preserve">
+    <value>Poslednou vhodnou úpravou je &lt;b&gt;zapekanie&lt;/b&gt;. Po umiestnení potravín do nádoby v ktorej budeme zapekať,
+ich podlejeme tukom a/alebo tekutinou a pokrm zapekáme.</value>
+  </data>
+  <data name="BestFlavouring" xml:space="preserve">
+    <value>Čím najlepšie dochutiť pokrmy?</value>
+  </data>
+  <data name="CitrusDescription" xml:space="preserve">
+    <value>K okysleniu pokrmov je najvhodnějšia &lt;b&gt;citrónová&lt;/b&gt; alebo &lt;b&gt;limetková šťava&lt;/b&gt; bohatá na vitamín C. Zásadne
+okyseľujeme pokrmy až po dokončení prípravy pokrmov, aby sa obsah vitamínu C zachoval čo najvyšší.
+Vyhýbame se sladeniu pokrmov a solíme z mierou. Denná doporučená dávka soli je 5g. Pritom 4 gramy
+sú ukryté v potravinách, takže na dosolenie pokrmov nám zostává iba 1 gram denne.</value>
+  </data>
+  <data name="CookingDescription" xml:space="preserve">
+    <value>Ďalším šetrným technologickým postupom je &lt;b&gt;varenie&lt;/b&gt;. Pri varení ponoríme potraviny do tekutiny
+(najčastejšie vody). Pôsobením varu dôjde k šetrnej úprave potravín. Tuk (olej, maslo) pridávame až do
+hotového pokrmu a tak nedocháza k jeho prepaľovaniu.</value>
+  </data>
+  <data name="HerbsDescription" xml:space="preserve">
+    <value>K dochuteniu jedál sú najvhodnejšie &lt;b&gt;čerstvé bylinky&lt;/b&gt; (napr. rozmarín, šalvia, petržlenová vňať, zelerová
+vňať, kôpor, bazalka, mäta atd.). Obsahujú cenný obsah vitamínov a fytochemických látok, ktoré okrem
+iného podporujú vylučovanie tráviacich štiav a uľahčujú proces trávenia.</value>
+  </data>
+  <data name="RecommendedHeatModifications" xml:space="preserve">
+    <value>Odporúčanie tepelnej úpravy</value>
+  </data>
+  <data name="SteamingDescription" xml:space="preserve">
+    <value>Najzdravším technologickým postupom prípravy pokrmov je &lt;b&gt;úprava v pare&lt;/b&gt;. K tomuto účelu sa v
+domácnostiach používajú rôzne parné nádoby. Vo väčších zariadeniach sa používajú tzv. konvektomaty.
+Potraviny pripravené pôsobením pary sú ľahko stráviteľné. Zároveň je to najšetrnejší spôsob, pri ktorom
+sa zachová vysoký obsah cenných nutričných látok. Tuk (olej, maslo) pridávame až do hotového pokrmu
+a tak nedocháza k jeho prepaľovaniu.</value>
+  </data>
+  <data name="StewingDescription" xml:space="preserve">
+    <value>I &lt;b&gt;dusenie&lt;/b&gt; sa zaraďuje medzi zdravšie tepelné úpravy pokrmov. Pri dusení potraviny ukládame v nízkom
+kastróli na cibuľový základ (cibuľa, olej) alebo iba na tuk (olej) a potraviny opekáme z oboch strán. Po
+opečení potraviny podlievame malým množstvom tekutiny (voda alebo vývar), kedy pôsobí jednak
+vysoká teplota tak i para. Vhodné je opekať potraviny nasucho, vtedy tiež tuk pridáme až do hotového
+pokrmu a zabránime jeho prepáleniu.</value>
+  </data>
+</root>

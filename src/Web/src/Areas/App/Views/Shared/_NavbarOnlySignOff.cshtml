@@ -1,0 +1,19 @@
+﻿@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+@using (Html.BeginForm(
+   nameof(Application.Web.Areas.Account.Controllers.HomeController.Logout),
+   ControllerNames.Home,
+   new { area = AreaNames.Account },
+   FormMethod.Post,
+   antiforgery: true,
+   new { @class = "navbar-right", id = "logoutForm" }))
+{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <button type="submit"
+                    class="nav-link btn btnLogOff textBlack fontLarger">
+                @SharedLocalizer["LogOffButtonName"]
+            </button>
+        </li>
+    </ul>
+}

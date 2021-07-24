@@ -1,0 +1,21 @@
+﻿@using Application.Web.Views.Shared.Components
+@model HomePageSummaryTableViewModel
+
+<h1 class="fontBold">@Model.Localizer[Model.Name]</h1>
+<table class="table table-borderless text-center borderRadius5 homePageShadow fontLarger">
+    <thead>
+        <tr>
+            <th>@Model.Localizer["Name"]</th>
+            <th>@Model.Localizer["Amount"] (g)</th>
+        </tr>
+    </thead>
+    <tbody id="@Model.Name">
+        <tr>
+            <td colspan="2">
+                <h4 class="fontLight">
+                    @Model.Localizer["ChooseMealForOverview"].
+                </h4>
+            </td>
+        </tr>
+    </tbody>
+</table>

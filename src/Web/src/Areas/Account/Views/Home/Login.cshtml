@@ -1,0 +1,69 @@
+﻿@inject IViewLocalizer Localizer
+@model LoginModel
+
+@{
+    ViewData["Title"] = Localizer["PageTitle"];
+}
+
+<div class="container justify-content-center fullHeight">
+    <div class="row heightInherit">
+        <div class="col-md-6 col-xs-12 d-flex align-items-center">
+            @(await Component.InvokeAsync<ImageViewComponent>(
+                new { path = "/img/signIn.png", alt = "Sign in" }))
+        </div>
+        <div class="col-md-6 col-xs-12 d-flex align-items-center justify-content-center">
+            <div>
+                <h1 class="display-4 fontBold text-center paddingDelimiter15">
+                    @Localizer["WelcomeBack"]
+                </h1>
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(
+                            model => model.Username,
+                            Localizer["Username"].Value,
+                            new { @class = "fontLarger fontLight" })
+                        @Html.TextBoxFor(
+                            model => model.Username,
+                            null,
+                            new { @class = "form-control form-control-lg fontLight", type = "text" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.Username, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(
+                            model => model.Password,
+                            Localizer["Password"].Value,
+                            new { @class = "fontLarger fontLight" })
+                        @Html.TextBoxFor(
+                            model => model.Password,
+                            null,
+                            new { @class = "form-control form-control-lg fontLight", type = "password" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="@Url.RouteUrl(
+                                    new {
+                                        action = nameof(Application.Web.Areas.Account.Controllers.HomeController.ForgotPassword),
+                                        controller = ControllerNames.Home,
+                                        area = AreaNames.Account })">
+                            @Localizer["ForgotPassword"]
+                        </a>
+                    </div>
+                    <span class="text-danger">
+                        @Html.ValidationSummary(true)
+                    </span>
+                    <div class="text-center paddingDelimiter15">
+                        <button type="submit"
+                                class="btn btn-lg bgRoyalOrange">
+                            @Localizer["SignIn"]
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
