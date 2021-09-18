@@ -1,6 +1,17 @@
 # Software for nutritional support of healthy lifestyle
 
-The text below describes how to run the application using Docker client.
+Bachelor thesis at the MFF at Charles University in Prague. Study branch - Programming & software systems.
+
+## Abstract
+
+Health care should be the most important thing in life. Health problems do not manifest themselves until
+later, often when they are irreversible. Our thesis seeks to prevent it by creating a tool to support it. The aim
+of this thesis is to implement a web application providing a nutritional plan consisting of a meal plan,
+drinking regime and physical activity. We present knowledge of the principles of proper nutrition and
+modern requirements of web applications. A separate part is devoted to the design of an algorithm for
+creating foods that meet the optimal ratio of macronutrients. We present the possibility of exporting content
+to calendar platforms. Part of this thesis is responsive design and protection against scripting attacks. Given
+our thesis, we believe that application and adherence to its plans is important in promoting health
 
 ## Requirements
 
