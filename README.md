@@ -1,6 +1,6 @@
 # Software for nutritional support of healthy lifestyle
 
-Bachelor thesis at the MFF at Charles University in Prague. Study branch - Programming & software systems.
+Bachelor thesis at the FMP at Charles University in Prague. Study branch - Programming & software systems.
 
 ## Abstract
 
